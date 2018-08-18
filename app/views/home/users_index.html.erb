@@ -1,0 +1,29 @@
+<%= render 'nav' %>
+<div class="container">
+  <div class="row row justify-content-md-center full-height align-items-center">
+    <%= form_for @user, url: {action: "create_users"} do |f| %>
+      <div class="col-md-12">
+        <%= f.text_field :name, class: "form-control", placeholder: "Nombre" %>
+      </div>
+      <div class="col-md-12">
+        <%= f.text_field :last_name, class: "form-control", placeholder: "Apellidos" %>
+      </div>
+      <div class="col-md-12">
+        <%= f.email_field :email, class: "form-control", placeholder: "Correo" %>
+      </div>
+      <div class="col-md-12">
+        <%= f.password_field :password, class: "form-control", placeholder: "Contraseña" %>
+      </div>
+      <div class="col-md-12">
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirmar contraseña" %>
+      </div>
+
+      <div class="col-md-12">
+        <%= f.select(:role, ['Admin', 'Teacher'])%>
+      </div>
+      <div class="col-md-12">
+        <%= f.submit "Create", class: "btn btn-success" %>
+      </div>
+    <%end%>
+  </div>
+</div>

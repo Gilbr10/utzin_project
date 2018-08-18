@@ -1,0 +1,14 @@
+<%= render 'nav' %>
+<div class="container">
+  <div class="row padding align-items-center justify-content-center middle-height">
+    <%= form_for @format, url: { action: "create_formats" } do |f| %>
+      <div class="col-md-12">
+        <%= f.file_field :document, class: "input-file", id: "file" %>
+        <label for="file">Seleccionar Archivo</label>
+      </div>
+      <div class="col-md-12">
+        <%= f.submit "Subir Formato", class: "btn btn-primary"%>
+      </div>
+    <%end%>
+  </div>
+</div>
